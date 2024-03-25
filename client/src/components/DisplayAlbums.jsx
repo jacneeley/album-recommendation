@@ -38,11 +38,14 @@ export default function DisplayAlbums(){
                         <button onClick={() => getRandomAlbum(getRandomInt(150))}>shuffle</button>
                     </div> : 
                     <div className="content">
-                        <img src={albums.albumPictureUrl}/>
-                        <p>{albums.album}</p>
-                        <p>{albums.artist}</p>
-                        <p>Want something different?</p>
-                        <button onClick={() => getRandomAlbum(getRandomInt(150))}>re-shuffle</button>
+                        {albums === undefined ? <p>loading...</p> 
+                        : <>
+                            <img src={albums.albumPictureUrl}/>
+                            <p>{albums.album}</p>
+                            <p>{albums.artist}</p>
+                            <p>Want something different?</p>
+                            <button onClick={() => getRandomAlbum(getRandomInt(150))}>re-shuffle</button> 
+                        </>}
                     </div>
                 } 
             </div>

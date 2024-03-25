@@ -23,8 +23,8 @@ code {
 }
 
 a {
-  font-weight: 500;
-  color: #049C9C;
+  font-size: large;
+  color: #2deeee;
 }
 a:hover {
   color: #049C9C;
@@ -78,10 +78,10 @@ footer{
 }
 
 .main-content{
-  position: relative;
+  position:relative;
 }
 
-#page-container{
+.page-container{
   position:relative;
   min-height: 100vh;
 }
@@ -115,19 +115,19 @@ footer{
   color: #0cdfdf;
 }
 
-#popup h2{
+.pop-up h2{
   text-align: center;
   margin: 30px auto;
 }
 
-#close{
+.close-btn{
   display: inline;
   float: right;
   margin-right:.5rem;
   cursor:pointer;
 }
 
-#close:hover {
+.close-btn:hover {
   color: #049C9C;
 }
 
@@ -139,19 +139,22 @@ footer{
   display: inline;
 }
 
-#about{
+.title{
+  display:inline;
+}
+
+.abt-btn{
+  display: inline;
   float: right;
-  margin-top: 30px;
+  margin-top:15px;
   font-size: larger;
+  border:none;
+  background-color: inherit;
 }
 
 .album-header{
   margin-left: 15rem;
   font-size: 2rem;
-}
-
-#album-content{
-  display: none;
 }
 
 .content-start{
@@ -161,6 +164,7 @@ footer{
 .display-popup{
   top:25%;
   visibility: visible;
+  z-index: 10;
 }
 
 @media (prefers-color-scheme: light) {
@@ -181,11 +185,11 @@ footer{
     background-color: #076d6d;
   }
 
-  #about:hover{
+  .abt-btn:hover{
     color:#076969;
   }
 
-  #close{
+  .close-btn{
     color: black;
   }
 }
@@ -199,11 +203,11 @@ footer{
     background: #302f2f;
   }
 
-  #about:hover {
+  .abt-btn:hover {
     color: #0dbebe;
   }
   
-  #close{
+  .close-btn{
     color:whitesmoke;
   }
 }
@@ -218,7 +222,7 @@ footer{
     font-size: 1.4rem;
   }
   
-  #about{
+  .abt-btn{
     margin-top: 10px;
     font-size:medium
   }
