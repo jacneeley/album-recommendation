@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 
@@ -16,29 +17,17 @@ export default function DisplayAlbums(){
     function getRandomAlbum(num){
         console.log(api + `${num}`);
         try {
-            fetch(api + `${num}`, {
-                headers: {
-                    'Accept' : 'application/json',
-                    'Content-Type': 'application/json',
-                    'crossDomain': true
-                }
-            })
-            .then(response => response.json())
-            .then(albumData => {
+            axios.get(api + `${num}`)
+            .then(response => {
                 setLoad(true);
-                console.log(albumData);
-                setAlbums(albumData);
-            });
+                console.log(response.data);
+                setAlbums(response.data);
+            }).catch((err) => console.log(err));
         } catch(err)
         { 
             console.log(err) 
         }
     }
-    
-    // useEffect(() =>{
-    //     console.log(albums);
-    // }, [albums])
-
 
     return (
         <>
