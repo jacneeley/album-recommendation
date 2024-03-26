@@ -90,10 +90,9 @@ To keep things interesting and fast, each day the server randomly picks 150 albu
 The front end uses React and only has two components, the Header component, and the DisplayAlbums component.<br>
 Move over to the "Client" directory and run the following commands:
 ```
-npm install
+npm install axios
 npm run start
 ```
-This will install all of the dependencies found in package.json.
 If you have the Flask server running, you can start the react app and it will launch on [localhost:3000](https://localhost:3000). When you click the "Shuffle" button, the client will make a get request to localhost:5000/randomInt (the api server) and the page will re-render with a result.
 
 Congrats! You should be up and running.
