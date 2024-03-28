@@ -81,11 +81,6 @@ python main.py
 python -m venv venv
 source venv/Scripts/activate
 ```
-### Proceed
-You can now access the server from [localhost:5000](https://localhost:5000). The server will automatically redirect you to [localhost:5000/albums/](localhost:5000/albums/).<br>
-To look at a specific album you can provide any number from 0 to 149 at the end of the url. For example, [localhost:5000/albums/49](localhost:5000/albums/49).<br>
-To keep things interesting and fast, each day the server randomly picks 150 albums from approx. 3000 records. This project was built around the limitation that both the frontend and backend would be hosted for free. The backend serves album info by searching spotify for metadata using the spotify api. Randomly selecting 150 albums to randomly recommend to users cuts back on processing time significantly when using free hosting services.
-
 ### setting up (dot)env
 The server needs a .env file to hold secrets needed to connect to the spotify api.
 
@@ -106,6 +101,11 @@ The .env will contain key-value pairs needed to run the script.
 3. Copy the ```client ID```, create a ```CLIENT_ID key``` and paste the key as the value.
 4. Now go back and click "view client secret" repeat step 3 for ```CLIENT_SECRET```
 5. Create a FILE_PATH key value pair and paste the file path of the NACC chart CSV.
+
+### Proceed
+You can now access the server from [localhost:5000](https://localhost:5000). The server will automatically redirect you to [localhost:5000/albums/](localhost:5000/albums/).<br>
+To look at a specific album you can provide any number from 0 to 149 at the end of the url. For example, [localhost:5000/albums/49](localhost:5000/albums/49).<br>
+To keep things interesting and fast, each day the server randomly picks 150 albums from approx. 3000 records. This project was built around the limitation that both the frontend and backend would be hosted for free. The backend serves album info by searching spotify for metadata using the spotify api. Randomly selecting 150 albums to randomly recommend to users cuts back on processing time significantly when using free hosting services.
 
 ## Frontend
 The front end uses React and only has two components, the Header component, and the DisplayAlbums component.<br>
@@ -128,7 +128,7 @@ Generally speaking, it's not a good idea to leave server url's exposed. A simple
 <br>You can name the key anything you'd like in the .env file, just ensure you use REACT_APP_ in the name of they key. That's how react knows what to look for in the .env file.<br>
 Example:
 ```
-REACT_APP_YOUR_KEY_NAME
+REACT_APP_YOUR_KEY_NAME=<localhost:whatver> or <https://some_api_url.com>
 ```
 If you decide to create your own var name in your local instance, make sure to change the value in const api as well in DisplayAlbums.jsx. <br>
 Congrats! You should be up and running.
