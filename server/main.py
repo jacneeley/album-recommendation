@@ -13,7 +13,11 @@ json_url = os.path.join(SITE_ROOT, 'utils/song_data/','album_data.json')
 albums = json.load(open(json_url))
 
 app = Flask(__name__)
-CORS(app, resources={r"/albums/*": {"origins": "*"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, resources={r"/albums/*" : {"origins" : "*"},
+                     r"/albums/<int:index>" : {"origins" : ["https://shuffle-usls.onrender.com/",
+                                                            "https://ktsw-recommends-8qqa.onrender.com/",
+                                                            "http://localhost:3000/"]}})
 
 @app.route("/")
 def index():
@@ -24,6 +28,11 @@ def albums_api():
       return albums
 
 @app.route("/albums/<int:index>/", methods = ['GET'])
+@cross_origin(origin=[
+                  "https://shuffle-usls.onrender.com/",
+                  "https://ktsw-recommends-8qqa.onrender.com/",
+                  "http://localhost:3000/"],
+                  headers=['Content- Type','Authorization'])
 def api_response(index):
       return albums[index]
 
