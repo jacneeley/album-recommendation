@@ -100,6 +100,7 @@ footer{
   border: 2px solid #049C9C;
   visibility: hidden;
   transition: all 0.5s;
+  z-index: 10;
 }
 
 .popup-content{
