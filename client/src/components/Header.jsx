@@ -27,9 +27,9 @@ export default function Header(){
         <a className="close-btn" onClick={() => handlePopup()}>X</a>
         <div className="popup-content">
           <h2>About</h2>
-          <p>KTSW Recommends is a web app that will recommend you a random album based on what we play on air.</p>
+          <p>Shuffle is a web app that will recommend you a random album based on NACC Radio Charts.</p>
           <p>All data is provided by <a href="https://naccchart.com/" target="_blank">NACC Radio Charts</a>.</p>
-          <p>For more info on what we're currently playing check out our <a href="https://ktswblog.net/recently-played/" target="_blank">Recently Played</a> page.</p>
+          <p>This site is just for fun. No personal data is collected. No Cookies are used on this site.</p>
         </div>
       </div>
     </>
