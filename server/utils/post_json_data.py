@@ -5,12 +5,13 @@ import time
 from utils.search import getAlbumData
 from utils.data import albums , artists
 
-parent_dir = os.path.dirname(__file__).replace("\\","/")
-directory = '/song_data/'
-folder_path = parent_dir + directory
-data_path = folder_path + 'album_data.json'
+parent_dir: str = os.path.dirname(__file__).replace("\\","/")
+filename: str = "album_data.json"
+directory: str = '/song_data/'
+folder_path: str = parent_dir + directory
+data_path: str = folder_path + filename
 
-def is_data_old():
+def is_data_old() -> None:
     days = 1
     day = 86400
     current_time = time.time()
@@ -24,15 +25,16 @@ def is_data_old():
             print("album_data.json is still fresh")
             return
     else:
-        print("'% s' does not exist yet..." % directory)
+        print("'% s' does not exist yet..." % filename)
 
-def create_album_json():
+def create_album_json() -> None:
     if os.path.exists(data_path) == False:
         if os.path.exists(folder_path) == False:
             os.mkdir(folder_path)
             print("Directory `% s` created" % directory)
         else:
             print("'% s' exists" % directory)
+            is_data_old()
 
         album_data = getAlbumData(albums,artists)
         try:
@@ -43,4 +45,4 @@ def create_album_json():
             pass
 
 
-    print('data `% s` found' % data_path)
+    print('data % s found' % filename)
